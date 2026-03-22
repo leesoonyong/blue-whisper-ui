@@ -1,3 +1,3 @@
-# Welcome to your Lovable project
+# 전월세 전환 계산기
 
-TODO: Document your project here
+DSR·비상금 기준으로 나에게 맞는 전세·보증금을 계산해보세요. 전월세 비교, 대출 이자, 적정 보증금까지 한 번에.

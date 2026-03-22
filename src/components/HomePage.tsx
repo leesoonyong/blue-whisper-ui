@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowRight, TrendingDown, Scale } from "lucide-react";
+import { BASE_RATE, JEONSE_CONVERSION_RATE, getNextMeeting, formatBaseRateDate } from "@/constants/monetary-policy";
 
 type Screen = "home" | "compare-form" | "compare-result" | "loan-form" | "loan-result" | "budget-form" | "budget-result";
 
@@ -8,6 +9,7 @@ interface HomePageProps {
 }
 
 const HomePage = ({ onNavigate }: HomePageProps) => {
+  const nextMeeting = getNextMeeting();
   const menuItems = [
     {
       icon: "🔄",
@@ -58,12 +60,14 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
             </span>
           </div>
           <div className="text-[40px] font-black leading-tight tracking-tighter">
-            2.50<span className="text-xl font-semibold opacity-50"> %</span>
+            {BASE_RATE.toFixed(2)}<span className="text-xl font-semibold opacity-50"> %</span>
           </div>
-          <p className="text-[11px] opacity-40 mb-3.5">2026.02.26 기준</p>
-          <div className="flex items-center gap-2 bg-primary-foreground/10 px-3.5 py-2.5 rounded-xl text-xs font-medium">
-            📅 다음 금통위 &nbsp;<span className="text-yellow-300 font-extrabold">D-19 · 4월 10일</span>
-          </div>
+          <p className="text-[11px] opacity-40 mb-3.5">{formatBaseRateDate()}</p>
+          {nextMeeting && (
+            <div className="flex items-center gap-2 bg-primary-foreground/10 px-3.5 py-2.5 rounded-xl text-xs font-medium">
+              📅 다음 금통위 &nbsp;<span className="text-yellow-300 font-extrabold">D-{nextMeeting.dDay} · {nextMeeting.label}</span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -106,7 +110,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
           <div className="bg-card rounded-xl p-3.5 card-shadow flex items-center gap-3">
             <Scale className="w-6 h-6 text-primary shrink-0" />
             <p className="text-[13px] text-muted-foreground font-medium leading-relaxed">
-              <b className="text-foreground">법정 전월세 전환율</b><br />기준금리 + 2% = 현재 4.5%
+              <b className="text-foreground">법정 전월세 전환율</b><br />기준금리 + 2% = 현재 {JEONSE_CONVERSION_RATE}%
             </p>
           </div>
         </div>

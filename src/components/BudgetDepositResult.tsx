@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import PageHeader from "./PageHeader";
 import { Share2, RotateCcw, AlertTriangle, CheckCircle, Info } from "lucide-react";
+import { JEONSE_CONVERSION_RATE } from "@/constants/monetary-policy";
 
 interface BudgetDepositResultProps {
   onBack: () => void;
@@ -20,7 +21,7 @@ interface BudgetDepositResultProps {
 // ── 한국 경제 기준 상수 ──────────────────────────────────────────
 const DSR_LIMIT = 0.40;           // DSR 40% (금융위원회 규제)
 const EMERGENCY_MONTHS = 3;       // 비상금 3개월 (금융감독원 권고)
-const JEONSE_CONV_RATE = 0.05;    // 전월세전환율 5% (한국은행 기준)
+const JEONSE_CONV_RATE = JEONSE_CONVERSION_RATE / 100;  // 전월세전환율 (한국은행 기준)
 const SAFE_RATIO = 0.25;          // 안전 주거비 (가처분소득 대비 25%)
 const RECOMMEND_RATIO = 0.30;     // 권장 주거비 (가처분소득 대비 30%)
 const HUG_METRO_LIMIT = 70000;    // HUG 수도권 전세보증 한도 7억 (만원)

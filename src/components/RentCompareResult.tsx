@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import PageHeader from "./PageHeader";
 import { Share2, RotateCcw } from "lucide-react";
+import { BASE_RATE } from "@/constants/monetary-policy";
 
 interface RentCompareResultProps {
   onBack: () => void;
@@ -17,8 +18,8 @@ interface RentCompareResultProps {
 const RentCompareResult = ({ onBack, onRecalculate, data }: RentCompareResultProps) => {
   const { wolseDeposit, monthlyRent, jeonseLoan, loanRate, contractYears } = data;
 
-  // 월세 보증금 기회비용 (연 이자율 가정 2.5%)
-  const wolseDepositInterest = Math.round((wolseDeposit * 10000 * 0.025) / 12);
+  // 월세 보증금 기회비용 (기준금리 기반)
+  const wolseDepositInterest = Math.round((wolseDeposit * 10000 * (BASE_RATE / 100)) / 12);
   const monthlyRentWon = monthlyRent * 10000;
   const wolseTotalMonthly = monthlyRentWon + wolseDepositInterest;
 
