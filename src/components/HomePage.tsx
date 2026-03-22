@@ -41,7 +41,7 @@ const HomePage = ({ onNavigate }: HomePageProps) => {
       {/* Header */}
       <div className="px-6 pt-4 mb-5">
         <p className="text-sm text-muted-foreground font-medium mb-1">오늘의 부동산 금리</p>
-        <h1 className="text-2xl font-black text-foreground tracking-tight">전월세 계산기 🏠</h1>
+        <h1 className="text-2xl font-black text-foreground tracking-tight">전월세 전환 계산기 🏠</h1>
       </div>
 
       {/* Rate Banner */}

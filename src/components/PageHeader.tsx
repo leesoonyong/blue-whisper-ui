@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { ArrowLeft } from "lucide-react";
+import { registerBackEvent } from "@/lib/toss";
 
 interface PageHeaderProps {
   title: string;
@@ -6,6 +8,11 @@ interface PageHeaderProps {
 }
 
 const PageHeader = ({ title, onBack }: PageHeaderProps) => {
+  // 토스 앱 네이티브 뒤로가기 버튼과 연동
+  useEffect(() => {
+    return registerBackEvent(onBack);
+  }, [onBack]);
+
   return (
     <div className="flex items-center gap-3.5 px-5 pt-2 pb-5">
       <button

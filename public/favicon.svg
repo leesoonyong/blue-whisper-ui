@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="16" fill="#3182F6"/>
+  <!-- 집 모양 -->
+  <path d="M32 12L14 27v25h13V38h10v14h13V27L32 12z" fill="white" opacity="0.95"/>
+  <!-- 전환 화살표 -->
+  <path d="M24 44h4v-4h-4v4zm12 0h4v-4h-4v4z" fill="#3182F6"/>
+</svg>

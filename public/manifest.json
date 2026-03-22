@@ -1,0 +1,18 @@
+{
+  "name": "전월세 전환 계산기",
+  "short_name": "전월세 계산기",
+  "description": "DSR·비상금 기준 전세·월세 적정 보증금 계산기",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3182F6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
